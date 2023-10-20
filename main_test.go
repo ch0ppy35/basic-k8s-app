@@ -77,5 +77,5 @@ func TestHealthCheckHandler(t *testing.T) {
 	var response HealthCheckResponse
 	err = json.Unmarshal(recorder.Body.Bytes(), &response)
 	assert.NoError(t, err)
-	assert.Equal(t, "OK", response.Status)
+	assert.Equal(t, true, response.Status)
 }

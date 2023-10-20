@@ -16,7 +16,7 @@ type PodNameResponse struct {
 }
 
 type HealthCheckResponse struct {
-	Status string `json:"status"`
+	Status bool `json:"status"`
 }
 
 func createResponse(w http.ResponseWriter, data interface{}) {
@@ -50,7 +50,7 @@ func podNameHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func healthCheckHandler(w http.ResponseWriter, r *http.Request) {
-	status := HealthCheckResponse{Status: "OK"}
+	status := HealthCheckResponse{Status: true}
 	createResponse(w, status)
 }
 

@@ -6,7 +6,7 @@ COPY go.sum .
 RUN go mod download
 COPY *.go ./
 
-RUN go test -v .
+RUN go test -v ./...
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o bin/server .
 
 FROM scratch as package
